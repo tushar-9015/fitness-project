@@ -1,13 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom';
+import { Box } from '@mui/material';
+import Home from './pages/Home';
+import ExerciseDetails from './pages/ExerciseDetails';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import './App.css';
 
-function App() {
+const App = () => {
 
   return (
-    <div className="App">
-      main bro
-    </div>
+    <Box width='400px' sx={{ width: {xl: '1488px' }}} m='auto'>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/exercise/:id' element={<ExerciseDetails />} />
+      </Routes>
+      <Footer />
+    </Box>
   )
 }
 
